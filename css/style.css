@@ -1,34 +1,30 @@
-/* Assuming #menu is the ID of the container of your navigation links */
+/* Aligns the text of the menu to the right */
 #menu {
-  position: fixed; /* Fixed position */
-  right: 0; /* Align to the right of the page */
-  top: 0; /* Align to the top of the page */
-  width: 200px; /* Width of the menu */
-  height: 100%; /* Full height of the page */
-  background-color: #f8f8f8; /* Background color of the menu */
+  text-align: right;
+  width: 100%; /* Ensures the menu uses the full width of its container */
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
 }
 
-/* Style for each menu item */
+/* Styles for the unordered list */
 #menu ul {
-  list-style: none; /* Remove list bullets */
-  padding: 0; /* Remove default padding */
-  margin: 0; /* Remove default margins */
+  list-style-type: none; /* Removes the default bullets */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Removes default margin */
 }
 
-#menu ul li {
-  display: block; /* Stack list items vertically */
+/* Styles for each menu item */
+#menu li {
+  display: block; /* Keeps the menu items vertical */
+  margin-bottom: 0px; /* Adjusts spacing between menu items */
 }
 
-/* Style for each link */
-#menu ul li a {
-  display: block; /* Make each link fill the horizontal space */
-  padding: 10px; /* Add some padding */
-  text-decoration: none; /* Remove underline from links */
-  color: #000; /* Text color for links */
-  border-bottom: 1px solid #ddd; /* Add a border between links */
-}
-
-/* Optionally, add a hover effect */
-#menu ul li a:hover {
-  background-color: #eee;
+/* Styles for the menu links */
+#menu a {
+  text-decoration: underline; /* Optional: Removes the underline from links */
+  color: blue; /* Optional: Set your desired link color */
+  display: block; /* Ensures the link uses the full width of the li, for better clickability */
 }
