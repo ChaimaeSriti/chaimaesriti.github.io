@@ -21,7 +21,7 @@ body {
 #menu li {
   display: block; /* Keeps the menu items vertical */
   margin-bottom: 0px; /* Adjusts spacing between menu items */
-  font-size: 12px;
+  font-size: 14px;
 
 }
 
@@ -30,7 +30,7 @@ body {
   text-decoration: underline; /* Optional: Removes the underline from links */
   color: blue; /* Optional: Set your desired link color */
   display: block; /* Ensures the link uses the full width of the li, for better clickability */
-  font-size: 12px;
+  font-size: 14px;
 }
 
 h1 {
