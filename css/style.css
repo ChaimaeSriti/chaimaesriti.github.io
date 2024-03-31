@@ -28,3 +28,14 @@ body {
   color: blue; /* Optional: Set your desired link color */
   display: block; /* Ensures the link uses the full width of the li, for better clickability */
 }
+
+
+/* body {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  line-height: 1.6;
+  background: #fff;
+  color: #000;
+  padding: 20px;
+  margin: 0;
+} */
+
