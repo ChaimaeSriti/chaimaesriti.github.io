@@ -98,3 +98,19 @@
   #menu ul li a:hover {
     background-color: #dedede;
   }
+
+  h1 {
+    font-family: 'Arial', sans-serif; /* Specify the font-family */
+    font-size: 36px; /* Set the font size */
+    color: #333; /* Set the text color */
+    margin-bottom: 20px; /* Add some space below the title */
+  }
+  
+  /* Style for secondary titles (usually h2) */
+  h2 {
+    font-family: 'Verdana', sans-serif; /* Specify a different font-family if desired */
+    font-size: 28px; /* Set the font size */
+    color: #333; /* Set the text color */
+    margin-bottom: 15px; /* Add some space below the title */
+  }
+  
