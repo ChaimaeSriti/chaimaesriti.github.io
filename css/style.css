@@ -1,0 +1,63 @@
+:root {
+    /* Light theme variables */
+    --background-color: #fff;
+    --text-color: #333;
+    --menu-bg-color: #f8f8f8;
+    --menu-hover-bg-color: #dedede;
+    --menu-border-color: #eaeaea;
+  
+    /* Dark theme variables */
+    --background-color-dark: #1e1e1e;
+    --text-color-dark: #c7c7c7;
+    --menu-bg-color-dark: #333;
+    --menu-hover-bg-color-dark: #454545;
+    --menu-border-color-dark: #3a3a3a;
+  }
+  
+  /* Default styles (light theme) */
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  #menu {
+    background-color: var(--menu-bg-color);
+    /* Rest of your menu styles */
+  }
+  
+  #menu a:hover {
+    background-color: var(--menu-hover-bg-color);
+  }
+  
+  #menu a {
+    border-bottom: 1px solid var(--menu-border-color);
+    /* Rest of your link styles */
+  }
+  
+  /* Dark theme overrides */
+  body.dark-theme {
+    --background-color: var(--background-color-dark);
+    --text-color: var(--text-color-dark);
+    --menu-bg-color: var(--menu-bg-color-dark);
+    --menu-hover-bg-color: var(--menu-hover-bg-color-dark);
+    --menu-border-color: var(--menu-border-color-dark);
+  }
+  
+  /* Global styles */
+  body, html {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Add the rest of your global styles here */
+  
+  /* Content styles */
+  #content {
+    width: 75%;
+    padding: 20px;
+    overflow-y: auto;
+    /* Add the rest of your content styles here */
+  }
+  
+  /* Add more styles as needed */
+  
