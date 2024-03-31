@@ -1,138 +1,34 @@
-:root {
-    /* Light theme variables */
-    --background-color: #fff;
-    --text-color: #333;
-    --menu-bg-color: #f8f8f8;
-    --menu-hover-bg-color: #dedede;
-    --menu-border-color: #eaeaea;
-  
-    /* Dark theme variables */
-    --background-color-dark: #1e1e1e;
-    --text-color-dark: #c7c7c7;
-    --menu-bg-color-dark: #333;
-    --menu-hover-bg-color-dark: #454545;
-    --menu-border-color-dark: #3a3a3a;
-  }
-  
-  /* Default styles (light theme) */
-  body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-  }
-  
-  #menu {
-    background-color: var(--menu-bg-color);
-    /* Rest of your menu styles */
-  }
-  
-  #menu a:hover {
-    background-color: var(--menu-hover-bg-color);
-  }
-  
-  #menu a {
-    border-bottom: 1px solid var(--menu-border-color);
-    /* Rest of your link styles */
-  }
-  
-  /* Dark theme overrides */
-  body.dark-theme {
-    --background-color: var(--background-color-dark);
-    --text-color: var(--text-color-dark);
-    --menu-bg-color: var(--menu-bg-color-dark);
-    --menu-hover-bg-color: var(--menu-hover-bg-color-dark);
-    --menu-border-color: var(--menu-border-color-dark);
-  }
-  
-  /* Global styles */
-  body, html {
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Add the rest of your global styles here */
-  
-  /* Content styles */
-  #content {
-    width: 75%;
-    padding: 20px;
-    overflow-y: auto;
-    /* Add the rest of your content styles here */
-  }
-  
-  /* Add more styles as needed */
-  #menu {
-    position: -webkit-sticky; /* For Safari */
-    position: sticky;
-    top: 0;
-    /* Other styles */
+/* Assuming #menu is the ID of the container of your navigation links */
+#menu {
+  position: fixed; /* Fixed position */
+  right: 0; /* Align to the right of the page */
+  top: 0; /* Align to the top of the page */
+  width: 200px; /* Width of the menu */
+  height: 100%; /* Full height of the page */
+  background-color: #f8f8f8; /* Background color of the menu */
 }
 
-/* This will reset any list styling */
+/* Style for each menu item */
 #menu ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    position: fixed;
-    right: 0; /* Positions the menu on the right */
-    top: 0; /* Aligns the menu to start from the top */
-    width: 200px; /* Set the width of the menu */
-    height: 100%; /* Full height */
-    background-color: #f8f8f8; /* Background color of the menu */
-  }
-  
-  /* This will style each menu item */
-  #menu ul li {
-    display: block; /* Makes each list item a block, causing them to stack vertically */
-  }
-  
-  /* This will style each link within the menu items */
-  #menu ul li a {
-    display: block; /* Makes the anchor tags behave like block elements, filling the width of the menu */
-    text-decoration: none; /* Removes underline from links */
-    color: #333; /* Sets the text color */
-    padding: 10px; /* Adds some padding inside each link */
-    border-bottom: 1px solid #eaeaea; /* Adds a separator between items */
-  }
-  
-  /* Optional: Style for link hover effect */
-  #menu ul li a:hover {
-    background-color: #dedede;
-  }
+  list-style: none; /* Remove list bullets */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margins */
+}
 
-  h1 {
-    font-family: 'Arial', sans-serif; /* Specify the font-family */
-    font-size: 36px; /* Set the font size */
-    color: #333; /* Set the text color */
-    margin-bottom: 20px; /* Add some space below the title */
-  }
-  
-  /* Style for secondary titles (usually h2) */
-  h2 {
-    font-family: 'Verdana', sans-serif; /* Specify a different font-family if desired */
-    font-size: 28px; /* Set the font size */
-    color: #333; /* Set the text color */
-    margin-bottom: 15px; /* Add some space below the title */
-  }
+#menu ul li {
+  display: block; /* Stack list items vertically */
+}
 
+/* Style for each link */
+#menu ul li a {
+  display: block; /* Make each link fill the horizontal space */
+  padding: 10px; /* Add some padding */
+  text-decoration: none; /* Remove underline from links */
+  color: #000; /* Text color for links */
+  border-bottom: 1px solid #ddd; /* Add a border between links */
+}
 
-  .vertical-menu {
-    width: 200px; /* Set a width if you like */
-  }
-  
-  .vertical-menu a {
-    background-color: #eee; /* Grey background color */
-    color: black; /* Black text color */
-    display: block; /* Make the links appear below each other */
-    padding: 12px; /* Add some padding */
-    text-decoration: none; /* Remove underline from links */
-  }
-  
-  .vertical-menu a:hover {
-    background-color: #ccc; /* Dark grey background on mouse-over */
-  }
-  
-  .vertical-menu a.active {
-    background-color: #04AA6D; /* Add a green color to the "active/current" link */
-    color: white;
-  }
-  
+/* Optionally, add a hover effect */
+#menu ul li a:hover {
+  background-color: #eee;
+}
