@@ -60,4 +60,41 @@
   }
   
   /* Add more styles as needed */
+  #menu {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0;
+    /* Other styles */
+}
+
+/* This will reset any list styling */
+#menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    right: 0; /* Positions the menu on the right */
+    top: 0; /* Aligns the menu to start from the top */
+    width: 200px; /* Set the width of the menu */
+    height: 100%; /* Full height */
+    background-color: #f8f8f8; /* Background color of the menu */
+  }
   
+  /* This will style each menu item */
+  #menu ul li {
+    display: block; /* Makes each list item a block, causing them to stack vertically */
+  }
+  
+  /* This will style each link within the menu items */
+  #menu ul li a {
+    display: block; /* Makes the anchor tags behave like block elements, filling the width of the menu */
+    text-decoration: none; /* Removes underline from links */
+    color: #333; /* Sets the text color */
+    padding: 10px; /* Adds some padding inside each link */
+    border-bottom: 1px solid #eaeaea; /* Adds a separator between items */
+  }
+  
+  /* Optional: Style for link hover effect */
+  #menu ul li a:hover {
+    background-color: #dedede;
+  }
