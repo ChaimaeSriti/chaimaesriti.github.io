@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="css/about.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 12px;
+            display: flex;
+        }
+        nav {
+            flex: 0 0 6%; /* Set the width of the navigation menu */
+            padding: 50px;
+            color: blue; /* Optional: Set your desired link color */
+            text-decoration: underline; /* Optional: Removes the underline from links */
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            margin-bottom: 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: blue;
+        }
+        #blog {
+            flex: 1; /* Take up remaining space */
+            padding: 20px;
+        }
+        article {
+            margin-bottom: 20px; /* Optional: Add space between articles */
+        }
+        h2 {
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#post1">Post 1</a></li>
+            <li><a href="#post2">Post 2</a></li>
+            <li><a href="#post3">Post 3</a></li>
+        </ul>
+    </nav>
+
+    <section id="blog">
+        <h1>Blog Posts</h1> <!-- Title added here -->
+        
+        <article id="post1">
+            <h2>1. A Brief History of Recommender Systems</h2>
+            <p>
+                Discuss the origin of recommender systems. Are they solely based on statistics, machine learning, or do they also involve aspects of computer science and other disciplines?
+            </p>
+        </article>
+        
+        <article id="post2">
+            <h2>2. A Brief History of A/B Testing</h2>
+            <p>
+                Provide a brief history of A/B testing, its significance, and its evolution over time.
+            </p>
+        </article>
+        
+        <article id="post3">
+            <h2>3. A Brief History of Search and Ranking</h2>
+            <p>
+                Alternatively, you can split this into two articles: one focusing on the history of search technologies and another on ranking algorithms.
+            </p>
+        </article>
+    </section>
+    
+    <!-- Link to your main JavaScript file -->
+    <script src="js/main.js"></script>
+    <script>
+        // Get current date
+        var currentDate = new Date().toISOString().split('T')[0];
+        
+        // Add current date after the title of each article
+        var articles = document.querySelectorAll('article');
+        articles.forEach(function(article) {
+            var timeElement = document.createElement('time');
+            timeElement.setAttribute('datetime', currentDate);
+            timeElement.textContent = 'Date: ' + currentDate;
+            
+            var titleElement = article.querySelector('h2');
+            titleElement.insertAdjacentElement('afterend', timeElement);
+            
+            // Apply smaller font size to the date
+            timeElement.style.fontSize = 'smaller';
+        });
+    </script>
+</body>
+</html>
