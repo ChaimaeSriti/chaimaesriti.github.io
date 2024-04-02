@@ -1,0 +1,31 @@
+:root {
+    --main-bg-color: #f0f0f0;
+    --text-color: #333;
+    --accent-color: #007bff;
+    --font-stack: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    font-family: var(--font-stack);
+    color: var(--text-color);
+    background-color: var(--main-bg-color);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+    margin: 0 auto; /* Centers the content */
+    padding: 20px;
+    max-width: 20px; /* Set the maximum width */
+}
+
+
+header, section, footer {
+    margin-bottom: 20px;
+}
+
+h1, h2 {
+    color: var(--accent-color);
+}
+
+a {
+    color: var(--accent-color);
+}
