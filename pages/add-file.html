@@ -239,7 +239,7 @@
     </div>
 
     <!-- Machine Learning -->
-    <div class="topic-section">
+    <!-- <div class="topic-section">
         <div class="topic-header">
             <div class="topic-header-content">
                 <h2>3. Machine Learning Algorithms and Models</h2>
@@ -273,58 +273,420 @@
                 </div>
             </div>
         </div>
-    </div>
-
+    </div> -->
+    
+    <div class="topic-section">
+        <div class="topic-header">
+            <h2>3. Machine Learning Algorithms and Models</h2>
+            <button class="collapse-btn">▼</button>
+        </div>
+    
+        <!-- Supervised Learning -->
+        <div class="subtopic">
+            <h3>3.1 Supervised Learning</h3>
+    
+            <!-- Regression Algorithms -->
+            <h4>3.1.1 Regression Algorithms</h4>
+    
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">3.1.1.1 Generalized Linear Models (GLMs)</span>
+                    <span class="time-estimate">3 hours</span>
+                    <ul class="concepts">
+                        <li>Logistic regression for classification</li>
+                        <li>Poisson regression</li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">3.1.1.2 Regularization Techniques</span>
+                    <span class="time-estimate">2 hours</span>
+                    <ul class="concepts">
+                        <li>L1, L2, Elastic Net penalties</li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">3.1.1.3 Non-linear Regression</span>
+                    <span class="time-estimate">4 hours</span>
+                    <ul class="concepts">
+                        <li>Support Vector Regression</li>
+                        <li>Decision Tree Regression</li>
+                        <li>Random Forest Regression</li>
+                    </ul>
+                </div>
+            </div>
+    
+            <!-- Classification Algorithms -->
+            <h4>3.1.2 Classification Algorithms</h4>
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">3.1.2.1 Ensemble Methods</span>
+                    <span class="time-estimate">3.5 hours</span>
+                    <ul class="concepts">
+                        <li>Bagging techniques</li>
+                        <li>Boosting algorithms (AdaBoost, Gradient Boosting)</li>
+                        <li>Stacking and blending</li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">3.1.2.2 Probabilistic Models</span>
+                    <span class="time-estimate">2.5 hours</span>
+                    <ul class="concepts">
+                        <li>Bayesian networks</li>
+                        <li>Gaussian Mixture Models</li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">3.1.2.3 Discriminative vs. Generative Models</span>
+                    <span class="time-estimate">1 hour</span>
+                    <ul class="concepts">
+                        <li>Comparison and applications</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Unsupervised Learning -->
+        <!-- <div class="subtopic">
+            <h3>3.2 Unsupervised Learning</h3>
+    
+            <h4>3.2.1 Advanced Clustering Techniques</h4>
+    
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">3.2.1.1 Spectral Clustering</span>
+                    <span class="time-estimate">1.5 hours</span>
+                </div>
+            </div>
+    
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">3.2.1.2 Affinity Propagation</span>
+                    <span class="time-estimate">1.5 hours</span>
+                </div>
+            </div>
+    
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">3.2.1.3 Mean-Shift Clustering</span>
+                    <span class="time-estimate">1.5 hours</span>
+                </div>
+            </div>
+    
+            <h4>3.2.2 Dimensionality Reduction</h4>
+    
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">3.2.2.1 Kernel PCA</span>
+                    <span class="time-estimate">1 hour</span>
+                </div>
+            </div>
+    
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">3.2.2.2 t-SNE for High-Dimensional Data Visualization</span>
+                    <span class="time-estimate">1.5 hours</span>
+                </div>
+            </div>
+    
+            <h4>3.2.3 Anomaly Detection</h4>
+    
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">3.2.3.1 One-Class SVM</span>
+                    <span class="time-estimate">1.5 hours</span>
+                </div>
+            </div>
+    
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">3.2.3.2 Isolation Forest</span>
+                    <span class="time-estimate">1 hour</span>
+                </div>
+            </div>
+        </div>
+    
+        <-- Semi-Supervised Learning -->
+        <!-- <div class="subtopic">
+            <h3>3.3 Semi-Supervised Learning</h3>
+    
+            <h4>3.3.1 Algorithms</h4>
+    
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">3.3.1.1 Self-Training</span>
+                    <span class="time-estimate">1 hour</span>
+                </div>
+            </div>
+    
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">3.3.1.2 Co-Training</span>
+                    <span class="time-estimate">1 hour</span>
+                </div>
+            </div> -->
+    
+            <!-- <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">3.3.1.3 Graph-Based Methods</span>
+                    <span class="time-estimate">1 hour</span>
+                </div>
+            </div>
+        </div>
+    
+        <-- Reinforcement Learning -->
+        <!-- <div class="subtopic">
+            <h3>3.4 Reinforcement Learning</h3>
+    
+            <h4>3.4.1 Advanced Topics</h4>
+    
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">3.4.1.1 Deep Reinforcement Learning</span>
+                    <span class="time-estimate">2.5 hours</span>
+                </div>
+            </div>
+    
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">3.4.1.2 Policy Gradients</span>
+                    <span class="time-estimate">2 hours</span>
+                </div>
+            </div>
+    
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">3.4.1.3 Actor-Critic Methods</span>
+                    <span class="time-estimate">2 hours</span>
+                </div>
+            </div> -->
+    
+            <!-- <h4>3.4.2 Applications</h4>
+    
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">3.4.2.1 Robotics</span>
+                    <span class="time-estimate">1.5 hours</span>
+                </div>
+            </div>
+    
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">3.4.2.2 Game AI</span>
+                    <span class="time-estimate">1.5 hours</span>
+                </div>
+            </div>
+        </div> -->
+    
+        <!-- Model Evaluation and Validation -->
+        <!-- <div class="subtopic">
+            <h3>3.5 Model Evaluation and Validation</h3> -->
+    
+            <!-- <h4>3.5.1 Hyperparameter Tuning</h4>
+    
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">3.5.1.1 Bayesian Optimization</span>
+                    <span class="time-estimate">1.5 hours</span>
+                </div>
+            </div>
+    
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">3.5.1.2 Automated Machine Learning (AutoML)</span>
+                    <span class="time-estimate">2 hours</span>
+                </div>
+            </div>
+    
+            <h4>3.5.2 Cross-Validation Strategies</h4>
+    
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">3.5.2.1 Stratified Sampling</span>
+                    <span class="time-estimate">1 hour</span>
+                </div>
+            </div>
+    
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">3.5.2.2 Time-Series Split</span>
+                    <span class="time-estimate">1.5 hours</span>
+                </div>
+            </div>
+        </div> -->
+    
+        <!-- Feature Engineering -->
+        <!-- <div class="subtopic">
+            <h3>3.6 Feature Engineering</h3>
+    
+            <h4>3.6.1 Advanced Techniques</h4>
+    
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">3.6.1.1 Feature Crossing</span>
+                    <span class="time-estimate">1 hour</span>
+                </div>
+            </div>
+    
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">3.6.1.2 Feature Hashing</span>
+                    <span class="time-estimate">1 hour</span>
+                </div>
+            </div>
+    
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">3.6.1.3 Interaction Terms</span>
+                    <span class="time-estimate">1.5 hours</span>
+                </div>
+            </div> -->
+    
+            <!-- <h4>3.6.2 Automated Feature Engineering</h4>
+    
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">3.6.2.1 Featuretools Library</span>
+                    <span class="time-estimate">1.5 hours</span>
+                </div>
+            </div>
+    
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">3.6.2.2 Deep Feature Synthesis</span>
+                    <span class="time-estimate">1.5 hours</span>
+                </div>
+            </div>
+        </div>
+    </div>  -->
+    
 <div class="topic-section">
     <div class="topic-header">
-        <h2> 4. Programming Topics for Solving LeetCode</h2>
+        <h2>4. Programming Topics for Solving LeetCode</h2>
         <button class="collapse-btn">▼</button>
     </div>
 
     <!-- Data Structures -->
     <div class="subtopic">
         <h3>1.1 Data Structures</h3>
+
         <div class="subtopic-item">
             <input type="checkbox" class="progress-checkbox">
             <div class="subtopic-content">
-                <span class="subtopic-title">1.1.1 Arrays</span>
+                <span class="subtopic-title">1.1.1 Arrays (Basics, Sliding Window, Two Pointers)</span>
                 <span class="time-estimate">2 hours</span>
+                <ul class="resources">
+                    <li>Neetcode: Data Structures Crash Course</li>
+                    <li>HackerRank: Data Structures Tutorials</li>
+                    <li>LeetCode Explore: Data Structures</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="subtopic-item">
+            <input type="checkbox" class="progress-checkbox">
+            <div class="subtopic-content">
+                <span class="subtopic-title">1.1.2 Linked Lists (Singly, Doubly, Circular)</span>
+                <span class="time-estimate">2.5 hours</span>
                 <ul class="resources">
                     <li>Neetcode: Data Structures Crash Course</li>
                     <li>HackerRank: Data Structures Tutorials</li>
                 </ul>
             </div>
         </div>
+
         <div class="subtopic-item">
             <input type="checkbox" class="progress-checkbox">
             <div class="subtopic-content">
-                <span class="subtopic-title">1.1.2 Linked Lists</span>
-                <span class="time-estimate">2.5 hours</span>
+                <span class="subtopic-title">1.1.3 Stacks and Queues (Implementations, Monotonic Stack)</span>
+                <span class="time-estimate">2 hours</span>
                 <ul class="resources">
-                    <li>GeeksforGeeks: Linked Lists</li>
-                    <li>LeetCode Explore: Linked Lists</li>
+                    <li>Neetcode: Data Structures Crash Course</li>
                 </ul>
             </div>
         </div>
+
         <div class="subtopic-item">
             <input type="checkbox" class="progress-checkbox">
             <div class="subtopic-content">
-                <span class="subtopic-title">1.1.3 Stacks and Queues</span>
+                <span class="subtopic-title">1.1.4 Hash Maps and Hash Sets (Collision Handling)</span>
+                <span class="time-estimate">1.5 hours</span>
+                <ul class="resources">
+                    <li>LeetCode Explore: Data Structures</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="subtopic-item">
+            <input type="checkbox" class="progress-checkbox">
+            <div class="subtopic-content">
+                <span class="subtopic-title">1.1.5 Trees (Binary Trees, Binary Search Trees, Trie)</span>
                 <span class="time-estimate">3 hours</span>
                 <ul class="resources">
-                    <li>LeetCode Explore: Stacks and Queues</li>
-                    <li>HackerRank: Stacks and Queues Tutorials</li>
+                    <li>Neetcode: Data Structures Crash Course</li>
                 </ul>
             </div>
         </div>
+
         <div class="subtopic-item">
             <input type="checkbox" class="progress-checkbox">
             <div class="subtopic-content">
-                <span class="subtopic-title">1.1.4 Trees</span>
+                <span class="subtopic-title">1.1.6 Heaps and Priority Queues</span>
+                <span class="time-estimate">1 hour</span>
+                <ul class="resources">
+                    <li>HackerRank: Data Structures Tutorials</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="subtopic-item">
+            <input type="checkbox" class="progress-checkbox">
+            <div class="subtopic-content">
+                <span class="subtopic-title">1.1.7 Graphs (Adjacency Matrix/List, DFS/BFS)</span>
                 <span class="time-estimate">4 hours</span>
                 <ul class="resources">
-                    <li>Neetcode: Trees Crash Course</li>
-                    <li>GeeksforGeeks: Binary Trees</li>
+                    <li>LeetCode Explore: Data Structures</li>
                 </ul>
             </div>
         </div>
@@ -333,36 +695,80 @@
     <!-- Algorithms -->
     <div class="subtopic">
         <h3>1.2 Algorithms</h3>
+
         <div class="subtopic-item">
             <input type="checkbox" class="progress-checkbox">
             <div class="subtopic-content">
-                <span class="subtopic-title">1.2.1 Sorting Algorithms</span>
-                <span class="time-estimate">3 hours</span>
-                <ul class="resources">
-                    <li>Khan Academy: Sorting Algorithms</li>
-                    <li>MIT OpenCourseWare: Algorithms</li>
-                </ul>
-            </div>
-        </div>
-        <div class="subtopic-item">
-            <input type="checkbox" class="progress-checkbox">
-            <div class="subtopic-content">
-                <span class="subtopic-title">1.2.2 Searching Algorithms</span>
+                <span class="subtopic-title">1.2.1 Sorting Algorithms (QuickSort, MergeSort, Counting Sort)</span>
                 <span class="time-estimate">2 hours</span>
                 <ul class="resources">
-                    <li>Grokking Algorithms by Aditya Bhargava</li>
-                    <li>HackerRank: Binary Search</li>
+                    <li>MIT OpenCourseWare: Introduction to Algorithms</li>
                 </ul>
             </div>
         </div>
+
         <div class="subtopic-item">
             <input type="checkbox" class="progress-checkbox">
             <div class="subtopic-content">
-                <span class="subtopic-title">1.2.3 Dynamic Programming</span>
-                <span class="time-estimate">6 hours</span>
+                <span class="subtopic-title">1.2.2 Searching Algorithms (Binary Search, Search in Rotated Array)</span>
+                <span class="time-estimate">1.5 hours</span>
                 <ul class="resources">
                     <li>Neetcode: Dynamic Programming Playlist</li>
-                    <li>MIT OpenCourseWare: Dynamic Programming</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="subtopic-item">
+            <input type="checkbox" class="progress-checkbox">
+            <div class="subtopic-content">
+                <span class="subtopic-title">1.2.3 Dynamic Programming (Memoization, Tabulation)</span>
+                <span class="time-estimate">3 hours</span>
+                <ul class="resources">
+                    <li>Grokking Algorithms by Aditya Bhargava</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="subtopic-item">
+            <input type="checkbox" class="progress-checkbox">
+            <div class="subtopic-content">
+                <span class="subtopic-title">1.2.4 Divide and Conquer (MergeSort, QuickSelect)</span>
+                <span class="time-estimate">2 hours</span>
+                <ul class="resources">
+                    <li>MIT OpenCourseWare: Introduction to Algorithms</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="subtopic-item">
+            <input type="checkbox" class="progress-checkbox">
+            <div class="subtopic-content">
+                <span class="subtopic-title">1.2.5 Greedy Algorithms (Interval Scheduling, Huffman Encoding)</span>
+                <span class="time-estimate">1.5 hours</span>
+                <ul class="resources">
+                    <li>Neetcode: Dynamic Programming Playlist</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="subtopic-item">
+            <input type="checkbox" class="progress-checkbox">
+            <div class="subtopic-content">
+                <span class="subtopic-title">1.2.6 Backtracking (Permutations, N-Queens, Sudoku Solver)</span>
+                <span class="time-estimate">2.5 hours</span>
+                <ul class="resources">
+                    <li>Grokking Algorithms by Aditya Bhargava</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="subtopic-item">
+            <input type="checkbox" class="progress-checkbox">
+            <div class="subtopic-content">
+                <span class="subtopic-title">1.2.7 Graph Algorithms (Dijkstra's, A*, Kruskal's, Topological Sort)</span>
+                <span class="time-estimate">3 hours</span>
+                <ul class="resources">
+                    <li>MIT OpenCourseWare: Introduction to Algorithms</li>
                 </ul>
             </div>
         </div>
@@ -371,25 +777,69 @@
     <!-- Problem-Solving Patterns -->
     <div class="subtopic">
         <h3>1.3 Problem-Solving Patterns</h3>
+
         <div class="subtopic-item">
             <input type="checkbox" class="progress-checkbox">
             <div class="subtopic-content">
                 <span class="subtopic-title">1.3.1 Sliding Window</span>
-                <span class="time-estimate">1.5 hours</span>
+                <span class="time-estimate">1 hour</span>
                 <ul class="resources">
-                    <li>Grokking the Coding Interview: Sliding Window Pattern</li>
-                    <li>Neetcode: Sliding Window Problems</li>
+                    <li>Grokking the Coding Interview Patterns for Coding Questions</li>
                 </ul>
             </div>
         </div>
+
         <div class="subtopic-item">
             <input type="checkbox" class="progress-checkbox">
             <div class="subtopic-content">
                 <span class="subtopic-title">1.3.2 Two Pointers</span>
-                <span class="time-estimate">2 hours</span>
+                <span class="time-estimate">1 hour</span>
                 <ul class="resources">
-                    <li>LeetCode Explore: Two Pointers</li>
-                    <li>Neetcode: Two Pointers Problems</li>
+                    <li>AlgoExpert: Problem-Solving Techniques</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="subtopic-item">
+            <input type="checkbox" class="progress-checkbox">
+            <div class="subtopic-content">
+                <span class="subtopic-title">1.3.3 Fast and Slow Pointers</span>
+                <span class="time-estimate">1 hour</span>
+                <ul class="resources">
+                    <li>AlgoExpert: Problem-Solving Techniques</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="subtopic-item">
+            <input type="checkbox" class="progress-checkbox">
+            <div class="subtopic-content">
+                <span class="subtopic-title">1.3.4 Top K Elements (Heap Problems)</span>
+                <span class="time-estimate">1 hour</span>
+                <ul class="resources">
+                    <li>Grokking the Coding Interview Patterns for Coding Questions</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="subtopic-item">
+            <input type="checkbox" class="progress-checkbox">
+            <div class="subtopic-content">
+                <span class="subtopic-title">1.3.5 Binary Search on Sorted Arrays</span>
+                <span class="time-estimate">1 hour</span>
+                <ul class="resources">
+                    <li>Grokking the Coding Interview Patterns for Coding Questions</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="subtopic-item">
+            <input type="checkbox" class="progress-checkbox">
+            <div class="subtopic-content">
+                <span class="subtopic-title">1.3.6 Union-Find/Disjoint Set Union (Cycle Detection)</span>
+                <span class="time-estimate">1.5 hours</span>
+                <ul class="resources">
+                    <li>AlgoExpert: Problem-Solving Techniques</li>
                 </ul>
             </div>
         </div>
@@ -398,21 +848,119 @@
     <!-- Complexity Analysis -->
     <div class="subtopic">
         <h3>1.4 Complexity Analysis</h3>
+
         <div class="subtopic-item">
             <input type="checkbox" class="progress-checkbox">
             <div class="subtopic-content">
                 <span class="subtopic-title">1.4.1 Big O Notation</span>
-                <span class="time-estimate">2 hours</span>
+                <span class="time-estimate">1 hour</span>
                 <ul class="resources">
-                    <li>Big O Cheat Sheet</li>
-                    <li>YouTube: Big O Explained</li>
+                    <li>Big O Cheat Sheet by CS Visualized</li>
+                    <li>YouTube: Time Complexity Explained</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="subtopic-item">
+            <input type="checkbox" class="progress-checkbox">
+            <div class="subtopic-content">
+                <span class="subtopic-title">1.4.2 Time Complexity of Common Algorithms</span>
+                <span class="time-estimate">1 hour</span>
+                <ul class="resources">
+                    <li>YouTube: Time Complexity Explained</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="subtopic-item">
+            <input type="checkbox" class="progress-checkbox">
+            <div class="subtopic-content">
+                <span class="subtopic-title">1.4.3 Space Complexity and Optimization</span>
+                <span class="time-estimate">1 hour</span>
+                <ul class="resources">
+                    <li>Big O Cheat Sheet by CS Visualized</li>
                 </ul>
             </div>
         </div>
     </div>
 
-    
+    <!-- System Design Basics -->
+    <div class="subtopic">
+        <h3>1.5 System Design Basics</h3>
+
+        <div class="subtopic-item">
+            <input type="checkbox" class="progress-checkbox">
+            <div class="subtopic-content">
+                <span class="subtopic-title">1.5.1 Scalability and Load Balancing</span>
+                <span class="time-estimate">2 hours</span>
+                <ul class="resources">
+                    <li>System Design Primer GitHub Repository</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="subtopic-item">
+            <input type="checkbox" class="progress-checkbox">
+            <div class="subtopic-content">
+                <span class="subtopic-title">1.5.2 Caching Strategies</span>
+                <span class="time-estimate">1.5 hours</span>
+                <ul class="resources">
+                    <li>System Design Primer GitHub Repository</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="subtopic-item">
+            <input type="checkbox" class="progress-checkbox">
+            <div class="subtopic-content">
+                <span class="subtopic-title">1.5.3 Databases (SQL vs NoSQL)</span>
+                <span class="time-estimate">2 hours</span>
+                <ul class="resources">
+                    <li>Grokking the System Design Interview</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="subtopic-item">
+            <input type="checkbox" class="progress-checkbox">
+            <div class="subtopic-content">
+                <span class="subtopic-title">1.5.4 API Design (REST, GraphQL)</span>
+                <span class="time-estimate">2 hours</span>
+                <ul class="resources">
+                    <li>Grokking the System Design Interview</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testing and Debugging -->
+    <div class="subtopic">
+        <h3>1.6 Testing and Debugging</h3>
+
+        <div class="subtopic-item">
+            <input type="checkbox" class="progress-checkbox">
+            <div class="subtopic-content">
+                <span class="subtopic-title">1.6.1 Writing Test Cases for Edge Cases</span>
+                <span class="time-estimate">1 hour</span>
+                <ul class="resources">
+                    <li>LeetCode Forum: Common Edge Cases</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="subtopic-item">
+            <input type="checkbox" class="progress-checkbox">
+            <div class="subtopic-content">
+                <span class="subtopic-title">1.6.2 Debugging Techniques (Print Statements, IDE Debugging Tools)</span>
+                <span class="time-estimate">1 hour</span>
+                <ul class="resources">
+                    <li>Python Debugging Guide</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
+
 
     <div class="topic-section">
         <div class="topic-header">
