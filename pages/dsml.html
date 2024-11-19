@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML/DS Learning Path</title>
+    <style>
+        :root {
+            --primary: #7c3aed;
+            --primary-dark: #6d28d9;
+            --primary-light: #c4b5fd;
+            --primary-bg: #f3f0ff;
+            --text-primary: #2d2b38;
+            --text-secondary: #6b7280;
+            --border-color: #e9d5ff;
+            --success: #16a34a;
+            --warning: #ea580c;
+            --danger: #dc2626;
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.5;
+            color: var(--text-primary);
+            font-size: 14px;
+            background-color: #faf9ff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-md);
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(250, 249, 255, 0.95);
+            backdrop-filter: blur(8px);
+            padding: var(--spacing-md) 0;
+            margin-bottom: var(--spacing-lg);
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .dashboard-card {
+            background: white;
+            padding: var(--spacing-md);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .search-container {
+            position: relative;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .search-input {
+            width: 100%;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 0.9em;
+            transition: border-color 0.2s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-bg);
+        }
+
+        .topic-section {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: var(--spacing-md);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
+        }
+
+        .topic-section:hover {
+            transform: translateY(-1px);
+        }
+
+        .topic-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .subtopic {
+            padding: var(--spacing-md);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .subtopic:last-child {
+            border-bottom: none;
+        }
+
+        .progress-checkbox {
+            accent-color: var(--primary);
+            width: 16px;
+            height: 16px;
+            margin-right: var(--spacing-sm);
+        }
+
+        .difficulty-badge {
+            font-size: 0.75em;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .difficulty-beginner {
+            background: #dcfce7;
+            color: var(--success);
+        }
+
+        .difficulty-intermediate {
+            background: #fff7ed;
+            color: var(--warning);
+        }
+
+        .difficulty-advanced {
+            background: #fee2e2;
+            color: var(--danger);
+        }
+
+        .timer-widget {
+            position: fixed;
+            bottom: var(--spacing-lg);
+            right: var(--spacing-lg);
+            background: white;
+            padding: var(--spacing-md);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+            z-index: 1000;
+        }
+
+        .timer-display {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: var(--primary);
+            text-align: center;
+            margin: var(--spacing-sm) 0;
+        }
+
+        .button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background-color 0.2s ease;
+        }
+
+        .button:hover {
+            background: var(--primary-dark);
+        }
+
+        .button-group {
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+
+        .notes-field {
+            width: 100%;
+            padding: var(--spacing-sm);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            margin-top: var(--spacing-sm);
+            font-size: 0.9em;
+            resize: vertical;
+            min-height: 60px;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: var(--primary-bg);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-value {
+            height: 100%;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+
+            .timer-widget {
+                bottom: 0;
+                right: 0;
+                left: 0;
+                border-radius: 8px 8px 0 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Machine Learning & Data Science Learning Path</h1>
+            <div class="search-container">
+                <input type="text" 
+                       class="search-input" 
+                       placeholder="Search topics, tags, or skills..." 
+                       id="search-input">
+            </div>
+        </header>
+
+        <div class="dashboard">
+            <div class="dashboard-card">
+                <h3>Overall Progress</h3>
+                <div class="progress-bar">
+                    <div class="progress-value" id="total-progress" style="width: 0%"></div>
+                </div>
+                <p id="progress-text">0% Complete</p>
+            </div>
+            
+            <div class="dashboard-card">
+                <h3>Estimated Completion</h3>
+                <div class="study-settings">
+                    <label for="weekly-hours">Weekly study hours:</label>
+                    <input type="number" 
+                           id="weekly-hours" 
+                           min="1" 
+                           max="168" 
+                           value="10" 
+                           style="width: 60px">
+                    <p id="completion-date"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main content sections go here -->
+        <!-- Example of a topic section -->
+        <div class="topic-section">
+            <div class="topic-header">
+                <h2>Mathematics and Statistics</h2>
+                <button class="collapse-btn">▼</button>
+            </div>
+            <div class="subtopic">
+                <h3>Linear Algebra</h3>
+                <span class="difficulty-badge difficulty-intermediate">Intermediate</span>
+                <div class="content">
+                    <input type="checkbox" class="progress-checkbox">
+                    <span>Vectors and Vector Spaces</span>
+                    <p>Time: 6 hours</p>
+                    <textarea class="notes-field" placeholder="Add your notes here..."></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timer Widget -->
+        <div class="timer-widget">
+            <h3>Study Timer</h3>
+            <div class="timer-display" id="timer">25:00</div>
+            <div class="button-group">
+                <button class="button" id="timer-toggle">Start</button>
+                <button class="button" id="timer-reset">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Utility functions
+        const $ = selector => document.querySelector(selector);
+        const $$ = selector => document.querySelectorAll(selector);
+
+        // State management
+        const state = {
+            timer: {
+                time: 25 * 60,
+                isRunning: false,
+                interval: null
+            },
+            progress: {
+                total: 0,
+                completed: 0
+            }
+        };
+
+        // Timer functionality
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        function updateTimer() {
+            $('#timer').textContent = formatTime(state.timer.time);
+        }
+
+        function toggleTimer() {
+            if (state.timer.isRunning) {
+                clearInterval(state.timer.interval);
+                $('#timer-toggle').textContent = 'Start';
+            } else {
+                state.timer.interval = setInterval(() => {
+                    state.timer.time--;
+                    updateTimer();
+                    if (state.timer.time <= 0) {
+                        clearInterval(state.timer.interval);
+                        state.timer.isRunning = false;
+                        $('#timer-toggle').textContent = 'Start';
+                        alert('Time for a break!');
+                    }
+                }, 1000);
+                $('#timer-toggle').textContent = 'Pause';
+            }
+            state.timer.isRunning = !state.timer.isRunning;
+        }
+
+        function resetTimer() {
+            clearInterval(state.timer.interval);
+            state.timer.time = 25 * 60;
+            state.timer.isRunning = false;
+            $('#timer-toggle').textContent = 'Start';
+            updateTimer();
+        }
+
+        // Progress tracking
+        function updateProgress() {
+            const totalTasks = $$('.progress-checkbox').length;
+            const completedTasks = $$('.progress-checkbox:checked').length;
+            const percentage = Math.round((completedTasks / totalTasks) * 100);
+            
+            $('#total-progress').style.width = `${percentage}%`;
+            $('#progress-text').textContent = `${percentage}% Complete`;
+        }
+
+        function updateCompletionDate() {
+            const weeklyHours = parseInt($('#weekly-hours').value);
+            const totalHours = 150; // Approximate total course hours
+            const weeksNeeded = Math.ceil(totalHours / weeklyHours);
+            
+            const completionDate = new Date();
+            completionDate.setDate(completionDate.getDate() + (weeksNeeded * 7));
+            
+            $('#completion-date').textContent = `Estimated completion: ${completionDate.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            })}`;
+        }
+
+        // Search functionality
+        function handleSearch(event) {
+            const searchTerm = event.target.value.toLowerCase();
+            $$('.topic-section').forEach(section => {
+                const content = section.textContent.toLowerCase();
+                section.style.display = content.includes(searchTerm) ? 'block' : 'none';
+            });
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            $('#timer-toggle').addEventListener('click', toggleTimer);
+            $('#timer-reset').addEventListener('click', resetTimer);
+            $('#search-input').addEventListener('input', handleSearch);
+            $('#weekly-hours').addEventListener('input', updateCompletionDate);
+            
+            $$('.progress-checkbox').forEach(checkbox => {
+                checkbox.addEventListener('change', updateProgress);
+            });
+
+            $$('.notes-field').forEach(field => {
+                const id = field.closest('.subtopic').querySelector('h3').textContent;
+                field.value = localStorage.getItem(`notes-${id}`) || '';
+                field.addEventListener('input', () => {
+                    localStorage.setItem(`notes-${id}`, field.value);
+                });
+            });
+
+            // Initial updates
+            updateCompletionDate();
+            updateProgress();
+        });
+    </script>
+</body>
+</html>

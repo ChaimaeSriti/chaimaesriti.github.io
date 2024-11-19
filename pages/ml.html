@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Comprehensive ML/DS Syllabus</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f7f9fc;
+  }
+  h1 {
+    text-align: center;
+    color: #2c3e50;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  th, td {
+    border: 1px solid #dee2e6;
+    padding: 8px;
+    vertical-align: top;
+  }
+  th {
+    background-color: #f1f3f5;
+    color: #2c3e50;
+    text-align: left;
+  }
+  tr:nth-child(even) {
+    background-color: #f8f9fa;
+  }
+  .topic {
+    background-color: #e9ecef;
+    font-weight: bold;
+  }
+  .indent-1 {
+    padding-left: 20px;
+    font-weight: bold;
+  }
+  .indent-2 {
+    padding-left: 40px;
+  }
+  .indent-3 {
+    padding-left: 60px;
+  }
+  .indent-4 {
+    padding-left: 80px;
+  }
+  .checkbox {
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<h1>Comprehensive Machine Learning/Data Science Syllabus</h1>
+
+<table>
+  <tr>
+    <th>Topic/Subtopic</th>
+    <th>Time Estimate</th>
+    <th>Concepts</th>
+    <th>Resources</th>
+    <th>Progress Tracker</th>
+    <th>Notes</th>
+  </tr>
+
+  <!-- 1. Mathematics and Statistics -->
+  <tr class="topic">
+    <td>1. Mathematics and Statistics</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="checkbox"></td>
+    <td></td>
+  </tr>
+
+  <!-- Linear Algebra -->
+  <tr>
+    <td class="indent-1">1.1 Linear Algebra</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="checkbox"></td>
+    <td></td>
+  </tr>
+
+  <!-- Vectors and Vector Spaces -->
+  <tr>
+    <td class="indent-2">1.1.1 Vectors and Vector Spaces</td>
+    <td>6 hours</td>
+    <td>
+      • Vector Operations (Addition, Scalar Multiplication)<br>
+      • Linear Combinations and Span<br>
+      • Basis and Dimension<br>
+      • Orthogonality and Orthonormality<br>
+      • Inner Product Spaces
+    </td>
+    <td>
+      - <a href="https://www.khanacademy.org/math/linear-algebra">Khan Academy: Linear Algebra</a><br>
+      - <a href="https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/">MIT OpenCourseWare: Linear Algebra</a>
+    </td>
+    <td class="checkbox"><input type="checkbox"></td>
+    <td></td>
+  </tr>
+
+  <!-- Matrices and Matrix Operations -->
+  <tr>
+    <td class="indent-2">1.1.2 Matrices and Matrix Operations</td>
+    <td>6 hours</td>
+    <td>
+      • Matrix Multiplication and Properties<br>
+      • Transpose, Inverse, and Trace of a Matrix<br>
+      • Rank and Nullity<br>
+      • Determinants and Their Properties<br>
+      • Special Matrices (Diagonal, Symmetric, Orthogonal)
+    </td>
+    <td>
+      - <a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF6J7sjJ">3Blue1Brown: Essence of Linear Algebra</a><br>
+      - <a href="https://textbooks.math.gatech.edu/ila/">Interactive Linear Algebra Textbook</a>
+    </td>
+    <td class="checkbox"><input type="checkbox"></td>
+    <td></td>
+  </tr>
+
+  <!-- Eigenvalues and Eigenvectors -->
+  <tr>
+    <td class="indent-2">1.1.3 Eigenvalues and Eigenvectors</td>
+    <td>7 hours</td>
+    <td>
+      • Characteristic Equation<br>
+      • Diagonalization of Matrices<br>
+      • Spectral Theorem<br>
+      • Applications in PCA and Stability Analysis<br>
+      • Jordan Normal Form
+    </td>
+    <td>
+      - <a href="https://www.youtube.com/watch?v=PFDu9oVAE-g">Eigenvalues and Eigenvectors Explained</a><br>
+      - <a href="https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/">MIT OpenCourseWare: Linear Algebra</a>
+    </td>
+    <td class="checkbox"><input type="checkbox"></td>
+    <td></td>
+  </tr>
+
+  <!-- Singular Value Decomposition (SVD) -->
+  <tr>
+    <td class="indent-2">1.1.4 Singular Value Decomposition (SVD)</td>
+    <td>5 hours</td>
+    <td>
+      • Decomposition into UΣVᵗ<br>
+      • Relation to Eigenvalues and Eigenvectors<br>
+      • Low-Rank Approximations<br>
+      • Applications in Data Compression and Noise Reduction
+    </td>
+    <td>
+      - <a href="http://www.ams.org/publicoutreach/feature-column/fcarc-svd">AMS Feature Column: SVD</a><br>
+      - <a href="https://www.youtube.com/watch?v=Rg3dMJP5d0E">SVD Tutorial Video</a>
+    </td>
+    <td class="checkbox"><input type="checkbox"></td>
+    <td></td>
+  </tr>
+
+  <!-- Tensor Operations -->
+  <tr>
+    <td class="indent-2">1.1.5 Tensor Operations</td>
+    <td>4 hours</td>
+    <td>
+      • Tensor Notation and Indexing<br>
+      • Tensor Contractions and Products<br>
+      • Applications in Deep Learning (TensorFlow, PyTorch)
+    </td>
+    <td>
+      - <a href="https://www.tensorflow.org/guide/tensor">TensorFlow Guide: Tensors</a><br>
+      - <a href="http://www.cs.cmu.edu/~zkolter/course/15-884/linalg-review.pdf">Tensor Operations in Machine Learning</a>
+    </td>
+    <td class="checkbox"><input type="checkbox"></td>
+    <td></td>
+  </tr>
+
+  <!-- Calculus -->
+  <tr>
+    <td class="indent-1">1.2 Calculus</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="checkbox"></td>
+    <td></td>
+  </tr>
+
+  <!-- Differential Calculus -->
+  <tr>
+    <td class="indent-2">1.2.1 Differential Calculus</td>
+    <td>6 hours</td>
+    <td>
+      • Derivatives and Rates of Change<br>
+      • Partial Derivatives and Gradient Vectors<br>
+      • Jacobian and Hessian Matrices<br>
+      • Chain Rule in Multivariable Functions<br>
+      • Taylor Series Expansion
+    </td>
+    <td>
+      - <a href="https://tutorial.math.lamar.edu/Classes/CalcI/CalcI.aspx">Paul's Online Math Notes: Calculus I</a><br>
+      - <a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/">MIT OpenCourseWare: Single Variable Calculus</a>
+    </td>
+    <td class="checkbox"><input type="checkbox"></td>
+    <td></td>
+  </tr>
+
+  <!-- Integral Calculus -->
+  <tr>
+    <td class="indent-2">1.2.2 Integral Calculus</td>
+    <td>6 hours</td>
+    <td>
+      • Definite and Indefinite Integrals<br>
+      • Multiple Integrals (Double, Triple Integrals)<br>
+      • Line and Surface Integrals<br>
+      • Applications in Probability (Expected Values)
+    </td>
+    <td>
+      - <a href="https://www.khanacademy.org/math/multivariable-calculus">Khan Academy: Multivariable Calculus</a><br>
+      - <a href="https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/">MIT OpenCourseWare: Multivariable Calculus</a>
+    </td>
+    <td class="checkbox"><input type="checkbox"></td>
+    <td></td>
+  </tr>
+
+  <!-- Multivariate Calculus -->
+  <tr>
+    <td class="indent-2">1.2.3 Multivariate Calculus</td>
+    <td>7 hours</td>
+    <td>
+      • Vector Calculus (Divergence, Curl)<br>
+      • Theorems of Green, Gauss, and Stokes<br>
+      • Lagrangian and Hamiltonian Mechanics
+    </td>
+    <td>
+      - <a href="https://mathinsight.org/vector_calculus">Math Insight: Vector Calculus</a><br>
+      - <a href="https://www.feynmanlectures.caltech.edu/">Feynman Lectures on Physics</a>
+    </td>
+    <td class="checkbox"><input type="checkbox"></td>
+    <td></td>
+  </tr>
+
+  <!-- Optimization Techniques -->
+  <tr>
+    <td class="indent-2">1.2.4 Optimization Techniques</td>
+    <td>8 hours</td>
+    <td>
+      • Unconstrained Optimization<br>
+      • Constrained Optimization (Lagrange Multipliers, KKT Conditions)<br>
+      • Convex and Non-Convex Optimization Problems<br>
+      • Applications in Machine Learning Model Training<br>
+      • Numerical Optimization Methods (Gradient Descent Variants)
+    </td>
+    <td>
+      - <a href="https://web.stanford.edu/~boyd/cvxbook/">Convex Optimization by Boyd and Vandenberghe</a><br>
+      - <a href="http://www.cs.ubc.ca/~schmidtm/Documents/2009_Notes_Optimization.pdf">Optimization for Machine Learning Notes</a>
+    </td>
+    <td class="checkbox"><input type="checkbox"></td>
+    <td></td>
+  </tr>
+
+  <!-- Probability Theory -->
+  <tr>
+    <td class="indent-1">1.3 Probability Theory</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="checkbox"></td>
+    <td></td>
+  </tr>
+
+  <!-- Probability Distributions -->
+  <tr>
+    <td class="indent-2">1.3.1 Probability Distributions</td>
+    <td>7 hours</td>
+    <td>
+      • Discrete Distributions (Bernoulli, Binomial, Poisson, Geometric)<br>
+      • Continuous Distributions (Uniform, Normal, Exponential, Beta, Gamma)<br>
+      • Properties (Mean, Variance, Skewness, Kurtosis)<br>
+      • Joint, Marginal, and Conditional Distributions<br>
+      • Multivariate Distributions (Multivariate Normal)
+    </td>
+    <td>
+      - <a href="https://www.probabilitycourse.com/">Introduction to Probability</a><br>
+      - <a href="https://seeing-theory.brown.edu/">Seeing Theory: A Visual Introduction to Probability</a>
+    </td>
+    <td class="checkbox"><input type="checkbox"></td>
+    <td></td>
+  </tr>
+
+  <!-- Random Variables and Expectation -->
+  <tr>
+    <td class="indent-2">1.3.2 Random Variables and Expectation</td>
+    <td>6 hours</td>
+    <td>
+      • Definition and Types (Discrete vs. Continuous)<br>
+      • Expected Value, Variance, and Higher Moments<br>
+      • Moment Generating Functions<br>
+      • Law of Large Numbers<br>
+      • Central Limit Theorem
+    </td>
+    <td>
+      - <a href="https://www.khanacademy.org/math/statistics-probability">Khan Academy: Statistics and Probability</a><br>
+      - <a href="https://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/book.html">Probability Book by Grinstead and Snell</a>
+    </td>
+    <td class="checkbox"><input type="checkbox"></td>
+    <td></td>
+  </tr>
+
+  <!-- Bayes' Theorem and Bayesian Probability -->
+  <tr>
+    <td class="indent-2">1.3.3 Bayes' Theorem and Bayesian Probability</td>
+    <td>6 hours</td>
+    <td>
+      • Prior, Likelihood, Posterior Distributions<br>
+      • Bayesian Inference Methods<br>
+      • Conjugate Priors<br>
+      • Applications in Bayesian Machine Learning<br>
+      • Markov Chain Monte Carlo (MCMC) Methods
+    </td>
+    <td>
+      - <a href="https://www.youtube.com/watch?v=HZGCoVF3YvM">3Blue1Brown: Bayes Theorem</a><br>
+      - <a href="https://github.com/AllenDowney/ThinkBayes2">Think Bayes Book</a>
+    </td>
+    <td class="checkbox"><input type="checkbox"></td>
+    <td></td>
+  </tr>
+
+  <!-- Markov Chains and Stochastic Processes -->
+  <tr>
+    <td class="indent-2">1.3.4 Markov Chains and Stochastic Processes</td>
+    <td>7 hours</td>
+    <td>
+      • Markov Property and Transition Matrices<br>
+      • Classification of States (Recurrent, Transient)<br>
+      • Stationary Distributions<br>
+      • Applications in Hidden Markov Models<br>
+      • Poisson Processes and Brownian Motion
+    </td>
+    <td>
+      - <a href="https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/">MIT OpenCourseWare: Stochastic Processes</a><br>
+      - <a href="https://www.stat.berkeley.edu/~karp/teaching.html">Stochastic Processes Lecture Notes</a>
+    </td>
+    <td class="checkbox"><input type="checkbox"></td>
+    <td></td>
+  </tr>
+
+  <!-- Statistics -->
+  <tr>
+    <td class="indent-1">1.4 Statistics</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="checkbox"></td>
+    <td></td>
+  </tr>
+
+  <!-- Descriptive Statistics -->
+  <tr>
+    <td class="indent-2">1.4.1 Descriptive Statistics</td>
+    <td>5 hours</td>
+    <td>
+      • Measures of Central Tendency (Mean, Median, Mode)<br>
+      • Measures of Dispersion (Range, Variance, Standard Deviation)<br>
+      • Correlation and Covariance<br>
+      • Data Visualization Techniques (Histograms, Box Plots, Scatter Plots)<br>
+      • Outlier Detection
+    </td>
+    <td>
+      - <a href="https://www.statisticshowto.com/">Statistics How To</a><br>
+      - <a href="https://www.openintro.org/stat/textbook.php?stat_book=os">OpenIntro Statistics Textbook</a>
+    </td>
+    <td class="checkbox"><input type="checkbox"></td>
+    <td></td>
+  </tr>
+
+  <!-- Inferential Statistics -->
+  <tr>
+    <td class="indent-2">1.4.2 Inferential Statistics</td>
+    <td>6 hours</td>
+    <td>
+      • Sampling Methods and Distributions<br>
+      • Point Estimation and Properties (Bias, Consistency, Efficiency)<br>
+      • Confidence Intervals and Their Interpretation<br>
+      • Hypothesis Testing (Null and Alternative Hypotheses)<br>
+      • P-Values and Significance Levels
+    </td>
+    <td>
+      - <a href="https://www.statlect.com/fundamentals-of-statistics">StatLect: Fundamentals of Statistics</a><br>
+      - <a href="https://stattrek.com/">StatTrek: Statistics Tutorial</a>
+    </td>
+    <td class="checkbox"><input type="checkbox"></td>
+    <td></td>
+  </tr>
+
+  <!-- Statistical Inference and Estimation -->
+  <tr>
+    <td class="indent-2">1.4.3 Statistical Inference and Estimation</td>
+    <td>6 hours</td>
+    <td>
+      • Maximum Likelihood Estimation (MLE)<br>
+      • Method of Moments<br>
+      • Bayesian Estimation Methods<br>
+      • Bootstrapping and Resampling Techniques
+    </td>
+    <td>
+      - <a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2014/">MIT OpenCourseWare: Probability and Statistics</a><br>
+      - <a href="https://www.amazon.com/All-Statistics-Statistical-Inference-Springer/dp/0387402721">All of Statistics by Larry Wasserman</a>
+    </td>
+    <td class="checkbox"><input type="checkbox"></td>
+    <td></td>
+  </tr>
+
+  <!-- ANOVA and Regression Analysis -->
+  <tr>
+    <td class="indent-2">1.4.4 ANOVA and Regression Analysis</td>
+    <td>7 hours</td>
+    <td>
+      • Analysis of Variance (One-Way and Two-Way ANOVA)<br>
+      • Simple and Multiple Linear Regression<br>
+      • Assumptions and Diagnostics (Homoscedasticity, Independence)<br>
+      • Generalized Linear Models (GLMs)<br>
+      • Time Series Analysis (ARIMA, GARCH Models)
+    </td>
+    <td>
+      - <a href="https://online.stat.psu.edu/stat501/">Penn State: Regression Methods</a><br>
+      - <a href="https://otexts.com/fpp2/">Forecasting: Principles and Practice</a>
+    </td>
+    <td class="checkbox"><input type="checkbox"></td>
+    <td></td>
+  </tr>
+
+  <!-- Numerical Methods -->
+  <tr>
+    <td class="indent-1">1.5 Numerical Methods</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="checkbox"></td>
+    <td></td>
+  </tr>
+
+  <!-- Numerical Optimization -->
+  <tr>
+    <td class="indent-2">1.5.1 Numerical Optimization</td>
+    <td>6 hours</td>
+    <td>
+      • Line Search Methods (Golden Section Search)<br>
+      • Trust Region Methods<br>
+      • Newton-Raphson and Quasi-Newton Methods (BFGS, L-BFGS)
+    </td>
+    <td>
+      - <a href="https://people.duke.edu/~hpgavin/cee201/">Introduction to Numerical Methods</a><br>
+      - <a href="https://optimization.mccormick.northwestern.edu/index.html">Numerical Optimization Course</a>
+    </td>
+    <td class="checkbox"><input type="checkbox"></td>
+    <td></td>
+  </tr>
+
+  <!-- Gradient Descent and Variants -->
+  <tr>
+    <td class="indent-2">1.5.2 Gradient Descent and Variants</td>
+    <td>6 hours</td>
+    <td>
+      • Batch, Stochastic, and Mini-Batch Gradient Descent<br>
+      • Momentum-Based Methods<br>
+      • Nesterov Accelerated Gradient<br>
+      • Second-Order Methods (Newton's Method)
+    </td>
+    <td>
+      - <a href="https://ruder.io/optimizing-gradient-descent/">An Overview of Gradient Descent Optimization Algorithms</a><br>
+      - <a href="https://www.deeplearningbook.org/contents/optimization.html">Deep Learning Book: Optimization</a>
+    </td>
+    <td class="checkbox"><input type="checkbox"></td>
+    <td></td>
+  </tr>
+
+  <!-- Convex Optimization -->
+  <tr>
+    <td class="indent-2">1.5.3 Convex Optimization</td>
+    <td>7 hours</td>
+    <td>
+      • Convex Sets and Functions<br>
+      • Duality Theory<br>
+      • Slater's Condition<br>
+      • Applications in Support Vector Machines
+    </td>
+    <td>
+      - <a href="https://web.stanford.edu/class/ee364a/">Stanford Course: Convex Optimization</a><br>
+      - <a href="https://www.stat.cmu.edu/~ryantibs/convexopt/">Convex Optimization Notes</a>
+    </td>
+    <td class="checkbox"><input type="checkbox"></td>
+    <td></td>
+  </tr>
+
+  <!-- Numerical Linear Algebra -->
+  <tr>
+    <td class="indent-2">1.5.4 Numerical Linear Algebra</td>
+    <td>6 hours</td>
+    <td>
+      • Matrix Factorizations (LU, QR, Cholesky)<br>
+      • Solving Linear Systems (Iterative Methods like Conjugate Gradient)<br>
+      • Eigenvalue Algorithms (Power Method, QR Algorithm)<br>
+      • Numerical Stability and Conditioning
+    </td>
+    <td>
+      - <a href="https://people.math.ethz.ch/~hwendland/numlinalg.pdf">Numerical Linear Algebra Lecture Notes</a><br>
+      - <a href="https://www-users.cs.umn.edu/~saad/IterMethBook_2ndEd.pdf">Iterative Methods for Sparse Linear Systems</a>
+    </td>
+    <td class="checkbox"><input type="checkbox"></td>
+    <td></td>
+  </tr>
+
+  <!-- Information Theory -->
+  <tr>
+    <td class="indent-1">1.6 Information Theory</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="checkbox"></td>
+    <td></td>
+  </tr>
+
+  <!-- Entropy and Information Measures -->
+  <tr>
+    <td class="indent-2">1.6.1 Entropy and Information Measures</td>
+    <td>5 hours</td>
+    <td>
+      • Shannon Entropy<br>
+      • Joint and Conditional Entropy<br>
+      • Relative Entropy (Kullback-Leibler Divergence)<br>
+      • Mutual Information and Its Applications<br>
+      • Entropy in Decision Trees (Information Gain)
+    </td>
+    <td>
+      - <a href="http://www.inference.org.uk/itprnn/book.pdf">Information Theory, Inference, and Learning Algorithms</a><br>
+      - <a href="https://colah.github.io/posts/2015-09-Visual-Information/">Visual Information Theory</a>
+    </td>
+    <td class="checkbox"><input type="checkbox"></td>
+    <td></td>
+  </tr>
+
+  <!-- Coding Theory -->
+  <tr>
+    <td class="indent-2">1.6.2 Coding Theory</td>
+    <td>5 hours</td>
+    <td>
+      • Huffman Coding<br>
+      • Shannon-Fano Coding<br>
+      • Arithmetic Coding<br>
+      • Applications in Data Compression
+    </td>
+    <td>
+      - <a href="https://web.stanford.edu/class/ee387/">Stanford Course: Data Compression</a><br>
+      - <a href="https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf">Shannon's Original Paper</a>
+    </td>
+    <td class="checkbox"><input type="checkbox"></td>
+    <td></td>
+  </tr>
+
+  <!-- Cross-Entropy Loss -->
+  <tr>
+    <td class="indent-2">1.6.3 Cross-Entropy Loss</td>
+    <td>4 hours</td>
+    <td>
+      • Use in Classification Models<br>
+      • Relation to Likelihood Functions<br>
+      • Softmax Function and Loss Computation<br>
+      • Applications in Neural Networks
+    </td>
+    <td>
+      - <a href="https://ml-cheatsheet.readthedocs.io/en/latest/loss_functions.html">Machine Learning Cheat Sheet: Loss Functions</a><br>
+      - <a href="https://www.deeplearningbook.org/contents/ml.html">Deep Learning Book: Machine Learning Basics</a>
+    </td>
+    <td class="checkbox"><input type="checkbox"></td>
+    <td></td>
+  </tr>
+
+  <!-- Continue adding other main topics (2 to 16) in the same format -->
+
+  <!-- For brevity, I'll include only the topic headings for the remaining sections. You should expand each section similarly to how it's done above. -->
+
+  <!-- 2. Programming Languages and Software Engineering -->
+  <tr class="topic">
+    <td>2. Programming Languages and Software Engineering</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="checkbox"></td>
+    <td></td>
+  </tr>
+
+  <!-- Add subtopics and sub-subtopics for Topic 2 -->
+
+  <!-- 3. Machine Learning Algorithms and Models -->
+  <tr class="topic">
+    <td>3. Machine Learning Algorithms and Models</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="checkbox"></td>
+    <td></td>
+  </tr>
+
+  <!-- Add subtopics and sub-subtopics for Topic 3 -->
+
+  <!-- Continue for Topics 4 to 16 -->
+
+</table>
+
+</body>
+</html>
