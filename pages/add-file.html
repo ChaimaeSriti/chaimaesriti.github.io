@@ -31,6 +31,12 @@
             justify-content: space-between;
             align-items: center;
         }
+        .topic-header-content {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-grow: 1;
+        }
         .topic-header h2 {
             font-size: 1.1em;
             font-weight: 500;
@@ -45,10 +51,20 @@
             font-size: 1em;
             color: #4c1d95;
             margin: 0 0 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         .progress-checkbox {
             margin-right: 8px;
             accent-color: #7c3aed;
+            width: 14px;
+            height: 14px;
+        }
+        .section-checkbox {
+            accent-color: #7c3aed;
+            width: 14px;
+            height: 14px;
         }
         .time-estimate {
             background: #f3f0ff;
@@ -113,6 +129,16 @@
             font-weight: 500;
             color: #1f1f1f;
         }
+        .progress-summary {
+            font-size: 0.85em;
+            color: #6b7280;
+            text-align: right;
+            margin-top: 4px;
+        }
+        .total-time {
+            color: #6d28d9;
+            font-weight: 500;
+        }
         a {
             color: #6d28d9;
             text-decoration: none;
@@ -120,10 +146,28 @@
         a:hover {
             text-decoration: underline;
         }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .overall-progress {
+            background: #f3f0ff;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #4c1d95;
+        }
     </style>
 </head>
 <body>
-    <h1> The ML-X Syllabus, made by Sea</h1>
+    <div class="header-container">
+        <h1> ML Engineering Syllabus </h1>
+        <div class="overall-progress">
+            Overall Progress: <span id="progress-percentage">0%</span>
+        </div>
+    </div>
 
     <div class="topic-section">
         <div class="topic-header">
@@ -159,13 +203,19 @@
 
     <div class="topic-section">
         <div class="topic-header">
-            <h2>2. Programming Languages</h2>
+            <div class="topic-header-content">
+                <h2>2. Programming Languages and Software Engineering</h2>
+            </div>
             <button class="collapse-btn">▼</button>
         </div>
         
         <div class="subtopic">
+            <h3>
+                <input type="checkbox" class="section-checkbox" data-section="core-programming">
+                2.1 Core Programming Languages
+            </h3>
             <div class="subtopic-item">
-                <input type="checkbox" class="progress-checkbox">
+                <input type="checkbox" class="progress-checkbox" data-parent="core-programming">
                 <div class="subtopic-content">
                     <span class="subtopic-title">2.1.1 Python</span>
                     <span class="time-estimate">10 hours</span>
@@ -175,24 +225,458 @@
                     </ul>
                 </div>
             </div>
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox" data-parent="core-programming">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">2.1.2 R</span>
+                    <span class="time-estimate">6 hours</span>
+                    <ul class="resources">
+                        <li>R for Data Science</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- Machine Learning -->
+    <div class="topic-section">
+        <div class="topic-header">
+            <div class="topic-header-content">
+                <h2>3. Machine Learning Algorithms and Models</h2>
+            </div>
+            <button class="collapse-btn">▼</button>
+        </div>
+        
+        <div class="subtopic">
+            <h3>
+                <input type="checkbox" class="section-checkbox" data-section="supervised">
+                3.1 Supervised Learning
+            </h3>
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox" data-parent="supervised">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">3.1.1 Regression Algorithms</span>
+                    <span class="time-estimate">8 hours</span>
+                    <ul class="resources">
+                        <li>An Introduction to Statistical Learning</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox" data-parent="supervised">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">3.1.2 Classification Algorithms</span>
+                    <span class="time-estimate">8 hours</span>
+                    <ul class="resources">
+                        <li>Pattern Recognition and Machine Learning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="topic-section">
+    <div class="topic-header">
+        <h2> 4. Programming Topics for Solving LeetCode</h2>
+        <button class="collapse-btn">▼</button>
+    </div>
+
+    <!-- Data Structures -->
+    <div class="subtopic">
+        <h3>1.1 Data Structures</h3>
+        <div class="subtopic-item">
+            <input type="checkbox" class="progress-checkbox">
+            <div class="subtopic-content">
+                <span class="subtopic-title">1.1.1 Arrays</span>
+                <span class="time-estimate">2 hours</span>
+                <ul class="resources">
+                    <li>Neetcode: Data Structures Crash Course</li>
+                    <li>HackerRank: Data Structures Tutorials</li>
+                </ul>
+            </div>
+        </div>
+        <div class="subtopic-item">
+            <input type="checkbox" class="progress-checkbox">
+            <div class="subtopic-content">
+                <span class="subtopic-title">1.1.2 Linked Lists</span>
+                <span class="time-estimate">2.5 hours</span>
+                <ul class="resources">
+                    <li>GeeksforGeeks: Linked Lists</li>
+                    <li>LeetCode Explore: Linked Lists</li>
+                </ul>
+            </div>
+        </div>
+        <div class="subtopic-item">
+            <input type="checkbox" class="progress-checkbox">
+            <div class="subtopic-content">
+                <span class="subtopic-title">1.1.3 Stacks and Queues</span>
+                <span class="time-estimate">3 hours</span>
+                <ul class="resources">
+                    <li>LeetCode Explore: Stacks and Queues</li>
+                    <li>HackerRank: Stacks and Queues Tutorials</li>
+                </ul>
+            </div>
+        </div>
+        <div class="subtopic-item">
+            <input type="checkbox" class="progress-checkbox">
+            <div class="subtopic-content">
+                <span class="subtopic-title">1.1.4 Trees</span>
+                <span class="time-estimate">4 hours</span>
+                <ul class="resources">
+                    <li>Neetcode: Trees Crash Course</li>
+                    <li>GeeksforGeeks: Binary Trees</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Algorithms -->
+    <div class="subtopic">
+        <h3>1.2 Algorithms</h3>
+        <div class="subtopic-item">
+            <input type="checkbox" class="progress-checkbox">
+            <div class="subtopic-content">
+                <span class="subtopic-title">1.2.1 Sorting Algorithms</span>
+                <span class="time-estimate">3 hours</span>
+                <ul class="resources">
+                    <li>Khan Academy: Sorting Algorithms</li>
+                    <li>MIT OpenCourseWare: Algorithms</li>
+                </ul>
+            </div>
+        </div>
+        <div class="subtopic-item">
+            <input type="checkbox" class="progress-checkbox">
+            <div class="subtopic-content">
+                <span class="subtopic-title">1.2.2 Searching Algorithms</span>
+                <span class="time-estimate">2 hours</span>
+                <ul class="resources">
+                    <li>Grokking Algorithms by Aditya Bhargava</li>
+                    <li>HackerRank: Binary Search</li>
+                </ul>
+            </div>
+        </div>
+        <div class="subtopic-item">
+            <input type="checkbox" class="progress-checkbox">
+            <div class="subtopic-content">
+                <span class="subtopic-title">1.2.3 Dynamic Programming</span>
+                <span class="time-estimate">6 hours</span>
+                <ul class="resources">
+                    <li>Neetcode: Dynamic Programming Playlist</li>
+                    <li>MIT OpenCourseWare: Dynamic Programming</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Problem-Solving Patterns -->
+    <div class="subtopic">
+        <h3>1.3 Problem-Solving Patterns</h3>
+        <div class="subtopic-item">
+            <input type="checkbox" class="progress-checkbox">
+            <div class="subtopic-content">
+                <span class="subtopic-title">1.3.1 Sliding Window</span>
+                <span class="time-estimate">1.5 hours</span>
+                <ul class="resources">
+                    <li>Grokking the Coding Interview: Sliding Window Pattern</li>
+                    <li>Neetcode: Sliding Window Problems</li>
+                </ul>
+            </div>
+        </div>
+        <div class="subtopic-item">
+            <input type="checkbox" class="progress-checkbox">
+            <div class="subtopic-content">
+                <span class="subtopic-title">1.3.2 Two Pointers</span>
+                <span class="time-estimate">2 hours</span>
+                <ul class="resources">
+                    <li>LeetCode Explore: Two Pointers</li>
+                    <li>Neetcode: Two Pointers Problems</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Complexity Analysis -->
+    <div class="subtopic">
+        <h3>1.4 Complexity Analysis</h3>
+        <div class="subtopic-item">
+            <input type="checkbox" class="progress-checkbox">
+            <div class="subtopic-content">
+                <span class="subtopic-title">1.4.1 Big O Notation</span>
+                <span class="time-estimate">2 hours</span>
+                <ul class="resources">
+                    <li>Big O Cheat Sheet</li>
+                    <li>YouTube: Big O Explained</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
 
     <div class="topic-section">
         <div class="topic-header">
             <h2>Must-Read Papers</h2>
             <button class="collapse-btn">▼</button>
         </div>
-        
+    
         <div class="paper-section">
+            <!-- Paper 1 -->
             <div class="subtopic-item">
                 <input type="checkbox" class="progress-checkbox">
                 <div class="subtopic-content">
-                    <span class="subtopic-title">Paper 1: "Attention Is All You Need"</span>
+                    <span class="subtopic-title">"Attention Is All You Need"</span>
                     <span class="time-estimate">3 hours</span>
                     <div class="keywords">
                         Keywords: NLP, Transformers, Attention Mechanisms<br>
-                        Link: arXiv:1706.03762
+                        Authors: Vaswani et al., 2017
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Paper 2 -->
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">"Deep Residual Learning for Image Recognition"</span>
+                    <span class="time-estimate">3.5 hours</span>
+                    <div class="keywords">
+                        Keywords: Computer Vision, CNNs, ResNet<br>
+                        Authors: He et al., 2015
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Paper 3 -->
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">"Generative Adversarial Nets"</span>
+                    <span class="time-estimate">4 hours</span>
+                    <div class="keywords">
+                        Keywords: Deep Learning, GANs, Generative Models<br>
+                        Authors: Goodfellow et al., 2014
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Paper 4 -->
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">"BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding"</span>
+                    <span class="time-estimate">4 hours</span>
+                    <div class="keywords">
+                        Keywords: NLP, Language Models, Pre-training<br>
+                        Authors: Devlin et al., 2018
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Paper 5 -->
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">"Neural Collaborative Filtering"</span>
+                    <span class="time-estimate">3 hours</span>
+                    <div class="keywords">
+                        Keywords: Recommendation Systems, Deep Learning, Collaborative Filtering<br>
+                        Authors: He et al., 2017
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Paper 6 -->
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">"The Netflix Prize and the Production of Knowledge"</span>
+                    <span class="time-estimate">2.5 hours</span>
+                    <div class="keywords">
+                        Keywords: Recommendation Systems, Industry Case Study, Collaborative Filtering<br>
+                        Authors: Hallinan and Striphas, 2016
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Paper 7 -->
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">"DeepFM: A Factorization-Machine based Neural Network for CTR Prediction"</span>
+                    <span class="time-estimate">3.5 hours</span>
+                    <div class="keywords">
+                        Keywords: Advertising, CTR Prediction, Deep Learning<br>
+                        Authors: Guo et al., 2017
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Paper 8 -->
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">"Diving Deep into Click-through Rate Prediction with Neural Networks"</span>
+                    <span class="time-estimate">3 hours</span>
+                    <div class="keywords">
+                        Keywords: Advertising, Wide & Deep Models, Recommendation Systems<br>
+                        Authors: Cheng et al., 2016
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Paper 9 -->
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">"A Neural Probabilistic Language Model"</span>
+                    <span class="time-estimate">3 hours</span>
+                    <div class="keywords">
+                        Keywords: NLP, Language Modeling, Neural Networks<br>
+                        Authors: Bengio et al., 2003
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Paper 10 -->
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">"ImageNet Classification with Deep Convolutional Neural Networks"</span>
+                    <span class="time-estimate">4 hours</span>
+                    <div class="keywords">
+                        Keywords: Computer Vision, CNNs, AlexNet<br>
+                        Authors: Krizhevsky et al., 2012
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Paper 11 -->
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">"Visualizing and Understanding Convolutional Neural Networks"</span>
+                    <span class="time-estimate">2.5 hours</span>
+                    <div class="keywords">
+                        Keywords: Computer Vision, CNNs, Visualization<br>
+                        Authors: Zeiler and Fergus, 2013
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Paper 12 -->
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">"AutoRec: Autoencoders Meet Collaborative Filtering"</span>
+                    <span class="time-estimate">3.5 hours</span>
+                    <div class="keywords">
+                        Keywords: Recommendation Systems, Autoencoders, Collaborative Filtering<br>
+                        Authors: Sedhain et al., 2015
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Paper 13 -->
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">"Learning to Rank using Gradient Descent"</span>
+                    <span class="time-estimate">3 hours</span>
+                    <div class="keywords">
+                        Keywords: Information Retrieval, Learning to Rank, Ranking Algorithms<br>
+                        Authors: Burges et al., 2005
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Paper 14 -->
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">"Factorization Machines"</span>
+                    <span class="time-estimate">3 hours</span>
+                    <div class="keywords">
+                        Keywords: Recommendation Systems, CTR Prediction, Factorization Machines<br>
+                        Authors: Rendle, 2010
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Paper 15 -->
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">"YOLOv3: An Incremental Improvement"</span>
+                    <span class="time-estimate">3.5 hours</span>
+                    <div class="keywords">
+                        Keywords: Computer Vision, Object Detection, YOLO<br>
+                        Authors: Redmon and Farhadi, 2018
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Paper 16 -->
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">"Playing Atari with Deep Reinforcement Learning"</span>
+                    <span class="time-estimate">3.5 hours</span>
+                    <div class="keywords">
+                        Keywords: Reinforcement Learning, Deep Learning, DQN<br>
+                        Authors: Mnih et al., 2013
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Paper 17 -->
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">"Sequence to Sequence Learning with Neural Networks"</span>
+                    <span class="time-estimate">4 hours</span>
+                    <div class="keywords">
+                        Keywords: NLP, Sequence Modeling, Machine Translation<br>
+                        Authors: Sutskever et al., 2014
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Paper 18 -->
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">"Fairness and Machine Learning: Limitations and Opportunities"</span>
+                    <span class="time-estimate">3 hours</span>
+                    <div class="keywords">
+                        Keywords: Ethics, Fairness, Responsible AI<br>
+                        Authors: Barocas et al., 2019
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Paper 19 -->
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">"Federated Learning: Collaborative Machine Learning without Centralized Training Data"</span>
+                    <span class="time-estimate">4 hours</span>
+                    <div class="keywords">
+                        Keywords: Privacy, Federated Learning, Distributed Training<br>
+                        Authors: McMahan et al., 2017
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Paper 20 -->
+            <div class="subtopic-item">
+                <input type="checkbox" class="progress-checkbox">
+                <div class="subtopic-content">
+                    <span class="subtopic-title">"Adam: A Method for Stochastic Optimization"</span>
+                    <span class="time-estimate">3.5 hours</span>
+                    <div class="keywords">
+                        Keywords: Optimization, Deep Learning, Stochastic Gradient Descent<br>
+                        Authors: Kingma and Ba, 2014
                     </div>
                 </div>
             </div>
@@ -200,6 +684,7 @@
     </div>
 
     <script>
+        // Handle section collapse
         document.querySelectorAll('.collapse-btn').forEach(button => {
             button.addEventListener('click', () => {
                 const content = button.parentElement.nextElementSibling;
@@ -209,16 +694,52 @@
             });
         });
 
-        document.querySelectorAll('.progress-checkbox').forEach(checkbox => {
-            checkbox.addEventListener('change', () => {
-                localStorage.setItem(checkbox.parentElement.textContent.trim(), checkbox.checked);
+        // Handle checkboxes and progress tracking
+        function updateSectionProgress(sectionCheckbox) {
+            const section = sectionCheckbox.dataset.section;
+            const childCheckboxes = document.querySelectorAll(`[data-parent="${section}"]`);
+            childCheckboxes.forEach(checkbox => {
+                checkbox.checked = sectionCheckbox.checked;
             });
+            updateOverallProgress();
+        }
 
+        function updateParentProgress(checkbox) {
+            const parent = checkbox.dataset.parent;
+            if (parent) {
+                const parentCheckbox = document.querySelector(`[data-section="${parent}"]`);
+                const siblings = document.querySelectorAll(`[data-parent="${parent}"]`);
+                const allChecked = Array.from(siblings).every(sibling => sibling.checked);
+                parentCheckbox.checked = allChecked;
+            }
+            updateOverallProgress();
+        }
+
+        function updateOverallProgress() {
+            const allCheckboxes = document.querySelectorAll('.progress-checkbox');
+            const checkedBoxes = document.querySelectorAll('.progress-checkbox:checked');
+            const percentage = Math.round((checkedBoxes.length / allCheckboxes.length) * 100);
+            document.getElementById('progress-percentage').textContent = `${percentage}%`;
+        }
+
+        // Add event listeners
+        document.querySelectorAll('.section-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', () => updateSectionProgress(checkbox));
+        });
+
+        document.querySelectorAll('.progress-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', () => updateParentProgress(checkbox));
+            
+            // Load saved state
             const stored = localStorage.getItem(checkbox.parentElement.textContent.trim());
             if (stored === 'true') {
                 checkbox.checked = true;
+                updateParentProgress(checkbox);
             }
         });
+
+        // Initial progress calculation
+        updateOverallProgress();
     </script>
 </body>
 </html>

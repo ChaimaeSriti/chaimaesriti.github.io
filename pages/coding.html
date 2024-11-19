@@ -1,62 +1,351 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="icon" type="image/png" href="/assets/images/Screenshot 2024-03-31 at 1.34.48 AM.png">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-    body {
-        font-family: 'Roboto', sans-serif;;
-        margin: 0;
-        padding: 10px;
-    }
-    h2 {
-        text-align: right;
-    }
-    .agenda {
-        max-width: 20px;
-        margin: 0 auto;
-        margin-left:15px;
-    }
-    .day {
-        margin-left:15px;
-        margin-bottom: 20px;
-    }
-    .date {
-        font-weight: bold;
-        font-size: 14px;
-        margin-bottom: 5px;
-    }
-    .notes {
-        margin-left:10px;
-        font-size: 12px;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeetCode 150 Study Plan</title>
+    <style>
+        :root {
+            --primary: #7c3aed;
+            --primary-light: #f3f0ff;
+            --text-primary: #2d2b38;
+            --easy: #16a34a;
+            --easy-bg: #dcfce7;
+            --medium: #ea580c;
+            --medium-bg: #fff7ed;
+            --hard: #dc2626;
+            --hard-bg: #fee2e2;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.5;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+            color: var(--text-primary);
+            font-size: 14px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--primary-light);
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .stats {
+            display: flex;
+            gap: 16px;
+        }
+
+        .stat-item {
+            background: var(--primary-light);
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+        }
+
+        .category {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            border: 1px solid #e5e7eb;
+            overflow: hidden;
+        }
+
+        .category-header {
+            background: var(--primary);
+            color: white;
+            padding: 12px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .category-name {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .category-progress {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        .problem-list {
+            padding: 8px 0;
+        }
+
+        .problem {
+            display: flex;
+            align-items: center;
+            padding: 8px 16px;
+            border-bottom: 1px solid #f3f4f6;
+            gap: 12px;
+        }
+
+        .problem:last-child {
+            border-bottom: none;
+        }
+
+        .problem:hover {
+            background: var(--primary-light);
+        }
+
+        .checkbox {
+            width: 16px;
+            height: 16px;
+            accent-color: var(--primary);
+        }
+
+        .problem-number {
+            width: 40px;
+            color: #6b7280;
+            font-size: 13px;
+        }
+
+        .problem-title {
+            flex-grow: 1;
+            font-weight: 500;
+        }
+
+        .difficulty {
+            font-size: 12px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+            min-width: 55px;
+            text-align: center;
+        }
+
+        .easy {
+            background: var(--easy-bg);
+            color: var(--easy);
+        }
+
+        .medium {
+            background: var(--medium-bg);
+            color: var(--medium);
+        }
+
+        .hard {
+            background: var(--hard-bg);
+            color: var(--hard);
+        }
+
+        .search {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+
+        .search:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 1px var(--primary);
+        }
+
+        .filters {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .filter-btn {
+            padding: 4px 12px;
+            border-radius: 4px;
+            border: 1px solid #e5e7eb;
+            background: white;
+            cursor: pointer;
+            font-size: 13px;
+        }
+
+        .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        @media (max-width: 640px) {
+            .problem {
+                flex-wrap: wrap;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="coding">
-        <h2>coding</h2>
-        <div class="day">
-            <div class="date">general remarks from 1/4/24 - looking into basics again</div>
-            <ul class="notes">
-                <li>constructive down top thinking is important - what do you want to return, and construct in the reverse logic. </li>
-                <li>bool(k & 1) is interesting, also binary - base 2 - base 10 conversions while practicing helps looking into some logics. </li>
-                <li>always avoid looping through i if you can! loop through elements directly. list comprehension is love. </li>
-                <li>think elegantly, name your objects elegantly, do not be blatant.</li>
-                <li>you can use randrange or choice from random!</li>
-                <li>pandas can take a list of lists and return a pd df with col names</li>
-            </ul>
-            <div class="date">general remarks from 10/4/24 - looking into SQL ressources</div>
-            <ul class="notes">
-                <li> <a> https://thodrek.github.io/cs564-fall17/ </a></li>
-                <li> https://www-conf.slac.stanford.edu/xldb2016/talks/published/Weds_9_Hyde_calcite-streaming-sql-xldb-2016.pdf </li>
-                <li> Effective SQL </li>
-                <li> Radhmu book. </li>
-            </ul>
-            </ul>
+    <div class="header">
+        <h1>LeetCode 150</h1>
+        <div class="stats">
+            <div class="stat-item">
+                Solved: <span id="total-solved">0</span>/150
+            </div>
+            <div class="stat-item">
+                Progress: <span id="progress-percent">0%</span>
+            </div>
         </div>
-        <!-- Add more days here -->
     </div>
+
+    <input type="text" class="search" placeholder="Search problems..." id="search">
+    <div class="filters">
+        <button class="filter-btn active" data-difficulty="all">All</button>
+        <button class="filter-btn" data-difficulty="easy">Easy</button>
+        <button class="filter-btn" data-difficulty="medium">Medium</button>
+        <button class="filter-btn" data-difficulty="hard">Hard</button>
+    </div>
+
+    <!-- Array/String -->
+    <div class="category">
+        <div class="category-header">
+            <div class="category-name">Array / String</div>
+            <div class="category-progress">0/14</div>
+        </div>
+        <div class="problem-list">
+            <div class="problem" data-difficulty="easy">
+                <input type="checkbox" class="checkbox">
+                <span class="problem-number">88.</span>
+                <span class="problem-title">Merge Sorted Array</span>
+                <span class="difficulty easy">Easy</span>
+            </div>
+            <div class="problem" data-difficulty="easy">
+                <input type="checkbox" class="checkbox">
+                <span class="problem-number">27.</span>
+                <span class="problem-title">Remove Element</span>
+                <span class="difficulty easy">Easy</span>
+            </div>
+            <div class="problem" data-difficulty="easy">
+                <input type="checkbox" class="checkbox">
+                <span class="problem-number">26.</span>
+                <span class="problem-title">Remove Duplicates from Sorted Array</span>
+                <span class="difficulty easy">Easy</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Two Pointers -->
+    <div class="category">
+        <div class="category-header">
+            <div class="category-name">Two Pointers</div>
+            <div class="category-progress">0/10</div>
+        </div>
+        <div class="problem-list">
+            <!-- Two Pointers problems -->
+        </div>
+    </div>
+
+    <!-- Continue with all other categories -->
+
+    <script>
+        // Track progress
+        function updateProgress() {
+            const total = document.querySelectorAll('.checkbox').length;
+            const solved = document.querySelectorAll('.checkbox:checked').length;
+            const percent = Math.round((solved / total) * 100);
+
+            document.getElementById('total-solved').textContent = solved;
+            document.getElementById('progress-percent').textContent = `${percent}%`;
+
+            // Update category progress
+            document.querySelectorAll('.category').forEach(category => {
+                const categoryTotal = category.querySelectorAll('.checkbox').length;
+                const categorySolved = category.querySelectorAll('.checkbox:checked').length;
+                category.querySelector('.category-progress').textContent = 
+                    `${categorySolved}/${categoryTotal}`;
+            });
+        }
+
+        // Save progress
+        function saveProgress() {
+            const progress = {};
+            document.querySelectorAll('.checkbox').forEach(checkbox => {
+                const problemNumber = checkbox.parentElement.querySelector('.problem-number').textContent;
+                progress[problemNumber] = checkbox.checked;
+            });
+            localStorage.setItem('leetcode-progress', JSON.stringify(progress));
+        }
+
+        // Load progress
+        function loadProgress() {
+            const progress = JSON.parse(localStorage.getItem('leetcode-progress') || '{}');
+            document.querySelectorAll('.checkbox').forEach(checkbox => {
+                const problemNumber = checkbox.parentElement.querySelector('.problem-number').textContent;
+                checkbox.checked = progress[problemNumber] || false;
+            });
+            updateProgress();
+        }
+
+        // Search functionality
+        document.getElementById('search').addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            document.querySelectorAll('.problem').forEach(problem => {
+                const text = problem.textContent.toLowerCase();
+                problem.style.display = text.includes(searchTerm) ? 'flex' : 'none';
+            });
+        });
+
+        // Filter by difficulty
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active state
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Filter problems
+                const difficulty = btn.dataset.difficulty;
+                document.querySelectorAll('.problem').forEach(problem => {
+                    if (difficulty === 'all' || problem.dataset.difficulty === difficulty) {
+                        problem.style.display = 'flex';
+                    } else {
+                        problem.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Toggle categories
+        document.querySelectorAll('.category-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const list = header.nextElementSibling;
+                list.style.display = list.style.display === 'none' ? 'block' : 'none';
+            });
+        });
+
+        // Event listeners for checkboxes
+        document.querySelectorAll('.checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                updateProgress();
+                saveProgress();
+            });
+        });
+
+        // Initialize
+        loadProgress();
+    </script>
 </body>
 </html>
